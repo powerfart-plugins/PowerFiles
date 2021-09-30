@@ -1,0 +1,19 @@
+.PF-Container {
+    background-color: var(--background-secondary);
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    border: 1px solid var(--background-secondary-alt);
+    min-width: 400px;
+}
+
+.PF-Container-Info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-top: 1px solid var(--background-secondary-alt);
+}
+
+.Svg-Preview {
+    height: 100px;
+}
