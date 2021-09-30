@@ -1,8 +1,10 @@
 const {
     React
 } = require("powercord/webpack");
-
-const ConvertSize = require("../util/bToKMB");
+const { ExternalLink } = require("powercord/components/Icons");
+const ConvertSize = require("../util/bToKMB")
+const { shell: { openExternal } } = require('electron');
+;
 module.exports = class Container extends React.Component {
     constructor(props) {
         super(props);
@@ -15,11 +17,12 @@ module.exports = class Container extends React.Component {
             <div className="PF-Container">
                 {children}
                 <div className="PF-Container-Info">
-                    <div id="PF-Container-Info-Name">
-                        <p>{attachment.filename}</p>
+                    <div className="PF-Container-Info-Name">
+                        <ExternalLink width="18px" className="ExternalLink-PF" onClick={() => openExternal(attachment.url)} />
+                        <p style={{margin: "0px"}}>{attachment.filename}</p>
                     </div>
                     <div id="PF-Container-Info-Size">
-                        <p>{ConvertSize(attachment.size)}</p>
+                        <p style={{margin: "0px"}}>{ConvertSize(attachment.size)}</p>
                     </div>
                 </div>
             </div>
