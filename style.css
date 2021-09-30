@@ -4,7 +4,7 @@
     border-radius: 6px;
     color: white;
     border: 1px solid var(--background-secondary-alt);
-    min-width: 300px;
+    width: 100%;
 }
 
 .PF-Container-Info {

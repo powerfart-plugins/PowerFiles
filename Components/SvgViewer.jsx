@@ -13,21 +13,15 @@ module.exports = class SvgViewer extends React.Component {
 
 
     renderSvg(content) {
-        return (
-            <div className="Svg-Preview" dangerouslySetInnerHTML={{__html: content}}/>
-        )
 
-        return (
-            <div>
-                <img className="Svg-Preview" src={`data:image/svg+xml;utf8,${content}`} />
-            </div>
-        )
+        return React.createElement("div", { className: "Svg-Preview", dangerouslySetInnerHTML: { __html: content } })
+
+        return <div className="Svg-Preview" dangerouslySetInnerHTML={{ __html: content }} />
     }
 
     render() {
         return (
             <Container attachment={this.props.attachment}>
-                {/* <p>{this.props.fileContent}</p> */}
                 {this.renderSvg(this.props.fileContent)}
             </Container>
         )
