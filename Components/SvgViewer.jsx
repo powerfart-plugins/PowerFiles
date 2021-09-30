@@ -14,6 +14,10 @@ module.exports = class SvgViewer extends React.Component {
 
     renderSvg(content) {
         return (
+            <div className="Svg-Preview" dangerouslySetInnerHTML={{__html: content}}/>
+        )
+
+        return (
             <div>
                 <img className="Svg-Preview" src={`data:image/svg+xml;utf8,${content}`} />
             </div>

@@ -33,6 +33,7 @@ module.exports = class PowerFiles extends Plugin {
 
         inject("PF-Svg", PlaintextFilePreviewComponent.default, "type", (args, res) => {
             const props = findInReactTree(res, r => r && r.fileContents)
+            
             console.log(props);
             if (props === null || props?.language !== "svg") return res;
 

@@ -4,7 +4,7 @@
     border-radius: 6px;
     color: white;
     border: 1px solid var(--background-secondary-alt);
-    min-width: 400px;
+    min-width: 300px;
 }
 
 .PF-Container-Info {
@@ -13,7 +13,7 @@
     justify-content: space-between;
     border-top: 1px solid var(--background-secondary-alt);
 }
-
-.Svg-Preview {
-    height: 100px;
+.Svg-Preview svg {
+    max-width: 300px;
+    height: inherit
 }
