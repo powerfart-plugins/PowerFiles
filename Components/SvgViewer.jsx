@@ -6,23 +6,28 @@ module.exports = class SvgViewer extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
+        this.fileContent = props.fileContent
         this.state = {
             raw: false,
         }
+
+        let blob = new Blob([this.fileContent], { type: "image/svg+xml" });
+        this.url = URL.createObjectURL(blob)
+
+    }
+
+    componentWillUnmount() {
+        URL.revokeObjectURL(this.url)
     }
 
 
-    renderSvg(content) {
-
-        return React.createElement("div", { className: "Svg-Preview", dangerouslySetInnerHTML: { __html: content } })
-
-        return <div className="Svg-Preview" dangerouslySetInnerHTML={{ __html: content }} />
-    }
 
     render() {
+
+
         return (
             <Container attachment={this.props.attachment}>
-                {this.renderSvg(this.props.fileContent)}
+                <img style={{ maxWidth: "300px" }} src={this.url} onLoad={() => URL.revokeObjectURL(this.url)} />
             </Container>
         )
     }
