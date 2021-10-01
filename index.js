@@ -23,7 +23,7 @@ module.exports = class PowerFiles extends Plugin {
 
         await this.betterSvg();
 
-        this.loadStylesheet("./style.css");
+        this.loadStylesheet("./style.scss");
     }
 
 
